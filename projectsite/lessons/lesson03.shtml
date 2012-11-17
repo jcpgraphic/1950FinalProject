@@ -14,11 +14,7 @@
    </head>
    <body id="body">
       <a id="top" name="top"></a> 
-      <div id="banner">
-         <h1>
-            Intermediate Web Design &amp; Development
-         </h1>
-      </div>
+      <!--#include file="inc/header.inc" -->
       <div id="titlebar">
          comp 1950 &gt; week 3: tools &amp; standards
       </div>
@@ -327,9 +323,7 @@
 
 
 	
-            <div id="footer">
-               <a href="#top">Top of Page</a> | <a href="/">Home</a>
-            </div>
+            <!--#include file="inc/footer.inc" -->
          </div>
          <div id="right-content">
             <h2 class="navhead">contents</h2>
