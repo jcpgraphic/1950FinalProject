@@ -4,16 +4,56 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
 	<title>Gabaclam Client Site</title>
+	<link rel="stylesheet" type="text/css"
+	href="css/style.css" media="screen">
+	<link rel="stylesheet" type="text/css"
+	href="css/print.css" media="print">
 </head>
 
 <body>
 <!--#include file="inc/header.inc" -->
 
-<!--#include file="inc/nav.inc" -->
+<article id="mainContent">
+	<!--#include file="inc/nav.inc" -->
 
-<article>
-	<section id="projectIntro"></section>
-	<section id="teamMembers"></section>
+	<section id="projectIntro">Project description does here....</section>
+	<section id="teamMembers">
+		<section class="member">
+			<img src="" alt="Member Photo"/>
+			<div class="memberDescription">
+				<h3>Barez Mardukhi</h3>
+				<p>What you done goes here!</p>
+			</div>
+		</section>
+		<section class="member">
+			<img src="" alt="Member Photo"/>
+			<div class="memberDescription">
+				<h3>Clare Wu</h3>
+				<p>What you done goes here!</p>
+			</div>
+		</section>
+		<section class="member">
+			<img src="" alt="Member Photo"/>
+			<div class="memberDescription">
+				<h3>Gabriel Caldwell</h3>
+				<p>What you done goes here!</p>
+			</div>
+		</section>
+		<section class="member">
+			<img src="" alt="Member Photo"/>
+			<div class="memberDescription">
+				<h3>Marcus Liebermann</h3>
+				<p>What you done goes here!</p>
+			</div>
+		</section>
+		<section class="member">
+			<img src="" alt="Member Photo"/>
+			<div class="memberDescription">
+				<h3>Juan Partidas</h3>
+				<p>What you done goes here!</p>
+			</div>
+		</section>
+	</section>
 </article>
 
 <!--#include file="inc/footer.inc" -->
