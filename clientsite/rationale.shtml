@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+	<title>Gabaclam Client Site - Rationale</title>
+	<link rel="stylesheet" type="text/css"
+	href="css/rationale_style.css" media="screen">
+	<link rel="stylesheet" type="text/css"
+	href="css/rationale_print.css" media="print">
+</head>
+
+<body>
+<!--#include file="inc/header.inc" -->
+
+<article id="mainContent">
+	<!--#include file="inc/nav.inc" -->
+
+	Rationale does here....
+</article>
+
+<!--#include file="inc/footer.inc" -->
+</body>
+</html>
