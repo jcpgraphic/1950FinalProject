@@ -1,0 +1,143 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+<title>comp 1950 | Week 7</title>
+</head>
+<body>
+<div id="container">
+<!--#include file="inc/header.inc" -->
+<article>
+<section>
+<h2>Midterm</h2>
+<p>The midterm will be written from 6:40 - 7:10.</p>
+<p>If you finish early, you may use your computer, sign up for Tumblr (if you haven&apos;t done so already) 
+or go for a short break. If you take a short break, <strong>please be back by 7:10</strong></p>
+<section>
+
+<h2>More fun with SSIs</h2>
+
+<p>There is more that can be done with SSIs beyond basic includes and the QUERY_STRING. Let's look at a couple more examples.</p>
+<h3>ECHO</h3>
+<ul>
+	<li>This is one of the most common actions within an SSI</li>
+	<li>It does what it says: Echoes back a variable or set of variables</li>
+	<li>There are a number of built in functions that allow you to accomplish quite a bit:<ul>
+		<li>DATE_GMT: Echo the GMT time/date</li>
+		<li>DATE_LOCAL: Echo the date of the local system (might not be YOUR local date)</li>
+		<li>DOCUMENT_NAME: The file name of the current document</li>
+		<li>DOCUMENT_URI: Virtual path of the current document</li>
+		<li>LAST_MODIFIED: The last time this current doc was modified</li>
+		<li>HTTP_REFERRER: Where the initial request for this current page came from</li>
+		<li>QUERY_STRING: The information located after the ? in a URL</li>
+		<li>HTTP_USER_AGENT: What browser the user is using</li>
+		<li>REMOTE_ADDR: IP address of the current visitor</li></ul></li>
+	<li>These can be combined with the ECHO command to produce the results above</li>
+	<li>An example: &lt;!--#echo var=&quot;VARIABLE&quot; --&gt;</li>
+</ul>
+
+<h3>Formatting</h3>
+<ul>
+	<li>Showing the raw date isn't always the attractive option</li>
+	<li>Formatting the date to show in a configurable manner is required</li>
+	<li>This is done through the <code>config timefmt</code> command</li>
+	<li>Example: &lt;!--#config timefmt=&quot;%m/%d/%y&quot; --&gt;</li>
+	<li>Lots of examples on how to <a href="http://www.zytrax.com/tech/web/ssi.htm#time">configure time and date with SSIs</a></li>
+</ul>
+
+<h3>More uses for SSIs</h3>
+<ul>
+	<li>One popular method for using SSIs is to establish the request IP and check to see if it is among a list of banned addresses</li>
+	<li>Indicating how old a file is can keep your content managers on top of their content!</li>
+	<li>Using QUERY_STRING quite a bit, especially in concert with scripts (PHP, Python, Perl, etc)</li>
+</ul>
+</section>
+<section>
+<h2>Template Development - Introduction</h2>
+<ul>
+	<li>Most common type of work done today: customizing templates or writing them from scratch</li>
+	<li>All levels: 
+			<ul>
+					<li><strong>Server side admins</strong> enable applications</li>
+					<li><strong>Programmers</strong> connect logic and data to front end code</li>
+					<li><strong>Client side scripters</strong> work with provided content for element manipulation</li>
+					<li><strong>Client side coders</strong> create the HTML and CSS to present the information</li>
+			</ul></li>
+	
+	<li>Many different languages and tools for developing templates</li>
+	<li>One common principle: inserting content into HTML</li>
+	<li><em>Exactly</em> like SSI exercises from last week</li>
+	<li>The primary (and nearly overwhelming use) of any template is for any type of <strong>Content Management System</strong> (CMS)</li>
+	<li>The simplest and most well known: a Blog</li>
+</ul>
+</section>
+
+<section>
+<h2>A Basic CMS</h2>
+<p>A &quot;Blog&quot; is short for &quot;Web Log&quot;.  It is generally a web page or pages dedicated to the posting of information by a user.</p>
+<p>Early Blogs were written as personal journals online, and many of them were hand-coded and uploaded each time content was changed.</p>
+<p>Today, there are many tools for creating and updating blogs, such as:<ul>
+<li><a href="http://www.blogger.com">Blogger</a></li>
+<li><a href="http://www.tumblr.com">Tumblr</a></li>
+<li><a href="http://www.posterous.com">Posterous</a></li>
+<li><a href="http://www.sixapart.com/movabletype/">Movable Type</a></li>
+<li><a href="http://wordpress.org/">Word Press</a></li>
+<li><a href="http://www.drupal.org/">Drupal</a></li>
+</ul></p>
+
+<p>Blogs have emerged as one of the leading technologies influencing the web today.  What started as individual users posting personal messages have now moved to corporations posting news and event information on their site with Blog-like functionality.</p>
+
+<h3>How do they work?</h3>
+<ul>
+	<li>At their simplest, any Blog architecture will take content provided by the user (Generally a title and some content) and push it to a web space.</li>
+	<li>Using templates, Blog software will take the content entered by the user, and insert it into the HTML where there are tags responsible for certain bits of information such as date, author, title, content, product name, cost, image and many other possibilities.</li>
+	<li>For example, the title of a page using <strong>Tumblr</strong> can be inserted using the following tag: {Title}</li>
+	<li>The {Title} tag is a proprietary syntax that tells the CMS on the backend to go find the title and insert it in the HTML</li>
+	<li>The title is a monatomic tag (meaning there is only an &quot;opening&quot; and not a closing tag to go with it}, as it simply represents a <em>variable</em> that the CMS will keep track of.</li>
+	<li>Other tags work like HTML, enclosing information, such as: </li>
+		<code>
+			{block:Description}<br />
+		      &nbsp;&nbsp;&nbsp;      &lt;p id="description"&gt;{Description}&lt;/p&gt;<br />
+		    {/block:Description}<br />
+		</code>	</li>
+
+	<li>You can see that there is the CMS-specific <strong>{block}</strong> tag with an attribute of <strong>Description</strong>. That indicates that the content inside the tag will be related to the description as entered by the author.</li>
+	<li>Also notable is the inclusion of regular HTML inside the Tumblr tags - exactly like our SSI exercises.</li>
+	<li>Once your template has been created, Blogger (or any other Blog Application) will scan your template for tags that indicate where data should be inserted.</li>
+	<li>The application will then insert all of the relevant data and publish to completed HTML page to the specified server.</li>
+	<li>The process works exactly like Server Side Includes, but the result resides on the web server (instead of in a browser window).  This is an advantage, as further server processing can be done when a page is actually requested by a user.</li>
+</ul>
+<h3>What are they used for?</h3>
+<p>Beginning as simple online journals, blogs are being used more and more for knowledge sharing and building.</p>
+<p>Many News sites are moving to Blog-like formats, allowing stories to be published, with follow-ups linked to the original story, as well as categorization used to link to similar stories.</p>
+<p>Blogs are increasingly being used as educational tools, letting instructors post notes to students, and allowing students to have a running narrative of events and knowledge that they are building</p>
+<p>With the ability to syndicate through the use of RSS, it is becoming easier for users to browse through large collections of Blogs simply by glancing at the titles in a News Reader. </p>
+<p>One of the most interesting uses of Blogs is to allow multiple authors access to contribute, and build a collection of work through multiple postings.  This is similar to a message board, but in a more narrative style.</p>
+</section>
+<section class="homework">
+<h2>Exercise</h2>
+<p>Everyone will create a Template using Tumblr as our Content Management System.</p>
+<p>Please follow these steps:</p>
+	<ul>
+		<li>Go to <a href="http://tumblr.com">Tumblr</a> and create an account or log in to your existing account</li>
+		<li>If you already have an account, create a new blog by clicking the bulleted list icon at the top of your dashboard and selecting &quot;Create new blog&quot;</li>
+		<li>Choose a basic, pre-created theme (template)</li>
+		<li>Write some detailed content:
+			<ul>
+				<li>Three text posts</li>
+				<li>Three photo posts</li>
+				<li>Three link posts</li>
+				<li>Any order is fine</li>
+				<li>Please include some level of detail, or select a topic (like dogs, or beer) and find some relevant photos and links</li>
+			</ul>
+		
+		</li>
+		<li>Publish the content and see how it looks</li>
+		<li>Examine the template</li>
+		<li>Once you have had a chance to create a basic blog with some decent content, we will build a new template</li>
+		
+	</ul>
+</section>
+</article>
+</body>
+</html>
