@@ -14,6 +14,7 @@
 <p>The midterm will be written from 6:40 - 7:10.</p>
 <p>If you finish early, you may use your computer, sign up for Tumblr (if you haven&apos;t done so already) 
 or go for a short break. If you take a short break, <strong>please be back by 7:10</strong></p>
+</section>
 <section>
 
 <h2>More fun with SSIs</h2>
@@ -77,14 +78,14 @@ or go for a short break. If you take a short break, <strong>please be back by 7:
 <h2>A Basic CMS</h2>
 <p>A &quot;Blog&quot; is short for &quot;Web Log&quot;.  It is generally a web page or pages dedicated to the posting of information by a user.</p>
 <p>Early Blogs were written as personal journals online, and many of them were hand-coded and uploaded each time content was changed.</p>
-<p>Today, there are many tools for creating and updating blogs, such as:<ul>
+<p>Today, there are many tools for creating and updating blogs, such as:</p><ul>
 <li><a href="http://www.blogger.com">Blogger</a></li>
 <li><a href="http://www.tumblr.com">Tumblr</a></li>
 <li><a href="http://www.posterous.com">Posterous</a></li>
 <li><a href="http://www.sixapart.com/movabletype/">Movable Type</a></li>
 <li><a href="http://wordpress.org/">Word Press</a></li>
 <li><a href="http://www.drupal.org/">Drupal</a></li>
-</ul></p>
+</ul>
 
 <p>Blogs have emerged as one of the leading technologies influencing the web today.  What started as individual users posting personal messages have now moved to corporations posting news and event information on their site with Blog-like functionality.</p>
 
@@ -96,12 +97,6 @@ or go for a short break. If you take a short break, <strong>please be back by 7:
 	<li>The {Title} tag is a proprietary syntax that tells the CMS on the backend to go find the title and insert it in the HTML</li>
 	<li>The title is a monatomic tag (meaning there is only an &quot;opening&quot; and not a closing tag to go with it}, as it simply represents a <em>variable</em> that the CMS will keep track of.</li>
 	<li>Other tags work like HTML, enclosing information, such as: </li>
-		<code>
-			{block:Description}<br />
-		      &nbsp;&nbsp;&nbsp;      &lt;p id="description"&gt;{Description}&lt;/p&gt;<br />
-		    {/block:Description}<br />
-		</code>	</li>
-
 	<li>You can see that there is the CMS-specific <strong>{block}</strong> tag with an attribute of <strong>Description</strong>. That indicates that the content inside the tag will be related to the description as entered by the author.</li>
 	<li>Also notable is the inclusion of regular HTML inside the Tumblr tags - exactly like our SSI exercises.</li>
 	<li>Once your template has been created, Blogger (or any other Blog Application) will scan your template for tags that indicate where data should be inserted.</li>
@@ -140,5 +135,6 @@ or go for a short break. If you take a short break, <strong>please be back by 7:
 	</ul>
 </section>
 </article>
+</div>
 </body>
 </html>
