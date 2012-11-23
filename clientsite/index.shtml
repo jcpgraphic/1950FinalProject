@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+	<title>Gabaclam Client Site</title>
+</head>
+
+<body>
+<!--#include file="inc/header.inc" -->
+
+<!--#include file="inc/nav.inc" -->
+
+<article>
+	<section id="projectIntro"></section>
+	<section id="teamMembers"></section>
+</article>
+
+<!--#include file="inc/footer.inc" -->
+</body>
+</html>
